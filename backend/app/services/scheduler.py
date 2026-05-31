@@ -37,8 +37,9 @@ async def _scheduled_fetch():
 def start_scheduler():
     global scheduler
     scheduler = AsyncIOScheduler()
-    # Run every 5 minutes to check if any source needs fetching
     scheduler.add_job(_scheduled_fetch, "interval", minutes=5, id="rss_fetch")
+    # Fetch immediately on startup
+    scheduler.add_job(_scheduled_fetch, id="rss_fetch_startup")
     scheduler.start()
     logger.info("Scheduler started")
 
