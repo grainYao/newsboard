@@ -1,6 +1,6 @@
 # NewsBoard
 
-RSS 新闻资讯聚合平台，支持可配置数据源、按领域分类展示、AI 翻译（英文→中文）、AI 助手发现 RSS 源。
+RSS 新闻资讯聚合平台，支持可配置数据源、按领域分类展示、AI 助手发现 RSS 源。
 
 **技术栈**：FastAPI + SQLite（后端） | React + TypeScript + Tailwind CSS（前端）
 
