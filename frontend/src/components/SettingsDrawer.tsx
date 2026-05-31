@@ -38,10 +38,8 @@ export default function SettingsDrawer({ open, onClose }: SettingsDrawerProps) {
     <div className="fixed inset-0 z-50 flex justify-end">
       <div className="absolute inset-0 bg-black/40" onClick={onClose} />
       {activeTab === 'ai' ? (
-        /* AI tab: full dark takeover */
-        <div className="relative w-full max-w-2xl flex flex-col animate-in slide-in-from-right duration-200">
-          {/* Minimal header for AI mode */}
-          <div className="flex items-center justify-between px-4 h-12 border-b border-slate-800/60 bg-slate-950 flex-shrink-0">
+        <div className="relative w-full max-w-2xl flex flex-col animate-in slide-in-from-right duration-200 bg-white dark:bg-slate-950">
+          <div className="flex items-center justify-between px-4 h-12 border-b border-slate-200 dark:border-slate-800/60 flex-shrink-0">
             <div className="flex items-center gap-4">
               {tabs.map((tab) => (
                 <button
@@ -49,8 +47,8 @@ export default function SettingsDrawer({ open, onClose }: SettingsDrawerProps) {
                   onClick={() => setActiveTab(tab.id)}
                   className={`flex items-center gap-1.5 px-3 py-1.5 text-sm rounded-lg transition-colors ${
                     activeTab === tab.id
-                      ? 'bg-cyan-500/10 text-cyan-400 border border-cyan-500/30'
-                      : 'text-zinc-500 hover:text-slate-300 hover:bg-slate-800/60'
+                      ? 'bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border border-cyan-500/30'
+                      : 'text-zinc-500 hover:text-slate-600 dark:hover:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800/60'
                   }`}
                 >
                   <tab.icon size={14} />
@@ -58,7 +56,7 @@ export default function SettingsDrawer({ open, onClose }: SettingsDrawerProps) {
                 </button>
               ))}
             </div>
-            <button onClick={onClose} className="p-1.5 rounded-lg hover:bg-slate-800 text-slate-500 hover:text-slate-300">
+            <button onClick={onClose} className="p-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">
               <X size={18} />
             </button>
           </div>
